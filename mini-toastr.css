@@ -1,0 +1,204 @@
+body {
+    background-color: #333;
+}
+
+:root {
+    --success: #51A351;
+    --successhover: #2a632a;
+    --info: #2F96B4;
+    --infohover: #0b3744;
+    --warn: #F89406;
+    --warnhover: #865106;
+    --error: #a71351;
+    --errorhover: #580829;
+}
+
+.item {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* -moz-box-shadow:5px 7px 22px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow:5px 7px 22px rgba(0, 0, 0, 0.2);
+    box-shadow:5px 7px 22px rgba(0, 0, 0, 0.2); */
+    color: #FFFFFF;
+    opacity: 0.8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: alpha(opacity=80);
+    /* animation: move 0.5s linear; */
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.item:hover {
+    color: #fff;
+}
+
+.item button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.item button:hover {
+    opacity: 1;
+}
+
+.success {
+    color: var(--success)
+}
+
+.success::after {
+    background-color: var(--success)
+}
+
+.success:hover {
+    background-color: var(--successhover)
+}
+
+.info {
+    color: var(--info)
+}
+
+.info::after {
+    background-color: var(--info)
+}
+
+.info:hover {
+    background-color: var(--infohover)
+}
+
+.warn {
+    color: var(--warn);
+}
+
+.warn::after {
+    background-color: var(--warn)
+}
+
+.warn:hover {
+    background-color: var(--warnhover)
+}
+
+.error {
+    color: var(--error)
+}
+
+.error::after {
+    background-color: var(--error)
+}
+
+.error:hover {
+    background-color: var(--errorhover)
+}
+
+
+button:hover {
+    opacity: 1;
+}
+
+
+
+@keyframes opacityEnter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes moveEnter {
+    0% {
+        opacity: 0;
+        transform: translateX(-800px);
+    }
+
+    70% {
+
+        transform: translateX(5px);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    90% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.top-right {
+    right: 10px;
+    top: 10px;
+}
+
+.top-left {
+    left: 10px;
+    top: 10px;
+}
+
+.bottom-right {
+    right: 10px;
+    bottom: 10px;
+}
+
+.bottom-left {
+    left: 10px;
+    bottom: 10px;
+}
+
+@keyframes moveLeave {
+    0% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    10% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-800px);
+    }
+}
+
+@keyframes opacityLeave {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

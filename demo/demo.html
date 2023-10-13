@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../mini-toastr.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    button:not(.closeBtn) {
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 5px;
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+    .btn-success {
+        background-color: #51A351;
+    }
+
+    .btn-info {
+        background-color: #2F96B4;
+    }
+
+    .btn-warn {
+        background-color: #F89406;
+    }
+
+    .btn-error {
+        background-color: #a71351;
+    }
+    </style>
+</head>
+
+<body>
+    <button onclick="onMsg1()" class="btn-success">成功</button>
+    <button onclick="onMsg2()" class="btn-error">失败</button>
+    <button onclick="onMsg3()" class="btn-info">信息</button>
+    <button onclick="onMsg4()" class="btn-warn">警告</button>
+    <script src="../mini-toastr.js"></script>
+    <script>
+    let toastr = new Toastr({
+        debug: true,
+        position: 'bottom-right',  //4个方向
+        containerId: 'toastr',
+        itemClass: 'item',
+        animation: 2,  //1,2个动画可选
+        delayTime: 2000,
+        animaTime: 500,
+        itemWidth: '20vw',
+        itemHeight: '8vh'
+    });
+
+    function onMsg1() {
+        toastr.success('success');
+    }
+
+    function onMsg2() {
+        toastr.error('error');
+    }
+
+    function onMsg3() {
+        toastr.info('info');
+    }
+
+    function onMsg4() {
+        toastr.warn('warn');
+    }
+    </script>
+</body>
+
+</html>
